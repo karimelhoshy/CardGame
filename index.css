@@ -1,0 +1,70 @@
+body {
+  font-family: 'Courier New', Courier, monospace; 
+  background-image: url('cards.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+  
+h1 {
+  color: white; /* Styling for the title */
+  margin-bottom: 30px;
+  text-align: center; /* Centering the title */
+  font-size: 28px;
+}
+
+h2 {
+  color: white; /* Styling for the title */
+  margin-bottom: 20px;
+  text-align: center; /* Centering the title */
+  font-size: 20px;
+}
+
+
+#form {
+  background-image: url('score.jpg');
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+  
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+  
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+  
+button {
+  background-color: rgb(7, 72, 37);
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Bigger button size */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px; /* Larger font size for button text */
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Space above the button */
+}
+  
+button:hover {
+  background-color: darkgreen;
+}
+  
+label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}

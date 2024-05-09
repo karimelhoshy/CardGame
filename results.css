@@ -1,0 +1,64 @@
+body {
+  font-family: 'Courier New', Courier, monospace; 
+  background-image: url('cards.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-image: url('score.jpg');
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 80%;
+  max-width: 600px; 
+}
+
+h2 {
+  color: white; 
+  margin-bottom: 20px;
+  text-align: center; 
+  font-size: 16px;
+}
+
+ #resultTable {
+  width: 100%;
+  border-collapse: separate; 
+  overflow: hidden; 
+} 
+
+#resultTable th, #resultTable td {
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+  width: 50%;
+}
+
+#resultTable th {
+  color: white;
+}
+
+
+button {
+  background-color: rgb(7, 72, 37);
+  color: white;
+  border: none;
+  padding: 15px 30px; 
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; 
+}
+
+button:hover {
+  background-color: darkgreen;
+}

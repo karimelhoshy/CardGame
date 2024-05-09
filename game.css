@@ -1,0 +1,192 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f7efda;
+  background-image: url('score.jpg');
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.container {
+  display: flex;
+  align-items: start;
+  justify-content: flex-start; 
+  gap: 20px;
+  padding-top: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.game-board {
+  background: url('green.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+  max-width: 80vw;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+}
+
+.hand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hand img, #draw-card img, #player-played-card img, #computer-played-card img {
+  height: 120px; 
+  width: 80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px; 
+}
+
+#player-cards img:hover, .played-card img:hover {
+  transform: translateY(-10px); 
+  cursor: pointer;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.center-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.center-area > div {
+  display: flex; 
+  flex: 1;
+  justify-content: center; 
+  align-items: center; 
+  min-width: 150px;
+}
+
+#score-board {
+  color: #fff; /* White text for visibility */
+  padding: 20px;
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace; 
+  margin-right: 20px;
+  height: 80vh;
+}
+
+.color-box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #333;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+
+#player-score, #computer-score {
+  font-size: 24px; 
+  font-weight: bold; 
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#draw-color {
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+ 
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+.game-board {
+  width: 100%;
+  max-width: none;
+}
+
+  #score-board {
+    order: -1; /* Moves the score board above on smaller screens */
+    margin-bottom: 20px;
+    margin-right: 0; /* Remove right margin on smaller screens */
+    height: 80vh;
+  }
+
+  .center-area > div {
+    min-width: 100px; /* Smaller width for smaller screens */
+  }
+}
+
+/* Style for player wins message */
+.player-wins {
+  font-size: 30px;
+  color: white; /* White color for player wins */
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+
+/* Style for computer wins message */
+.computer-wins {
+  font-size: 30px;
+  color: #E53935; /* Red color for computer wins */
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+
+/* Simple pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scoreEffect {
+  0% { transform: scale(1); color: rgb(19, 251, 43); }
+  50% { transform: scale(1.5); color: rgb(19, 251, 43); }
+  100% { transform: scale(1); color: rgb(19, 251, 43); }
+}
+
+.score-effect {
+  animation: scoreEffect 1.5s ease;
+}

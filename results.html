@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Past Results</title>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import { getFirestore, collection, query, where, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+
+        const firebaseConfig = {
+        apiKey: "AIzaSyBu5NqJOLwlKdZzvpRaNwq_f4rbfpJOPno",
+        authDomain: "cardgame-801bc.firebaseapp.com",
+        projectId: "cardgame-801bc",
+        storageBucket: "cardgame-801bc.appspot.com",
+        messagingSenderId: "317868939327",
+        appId: "1:317868939327:web:e9c803c6520faed3a8008a",
+        measurementId: "G-X2QBDB403E"
+        };
+
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function loadResults(playerName) {
+            const resultsRef = collection(db, "game-results");
+            const q = query(resultsRef, where("playerName", "==", playerName));
+            const querySnapshot = await getDocs(q);
+
+            const resultTable = document.getElementById("resultTable");
+
+            const names = resultTable.insertRow(1);
+            const player = names.insertCell(0);
+            const comp = names.insertCell(1);
+
+            player.innerHTML = '<h2>' + playerName + "</h2>";
+            comp.innerHTML = "<h2>" + 'Computer' + "</h2>";
+
+
+            querySnapshot.forEach((doc) => {
+                // Assuming doc.data() is of the form { playerName: 'Matt', playerScore: 10, computerScore: 8 }
+                const data = doc.data();
+                const row = resultTable.insertRow(-1); // Inserts a row at the end of the table
+                const playerNameCell = row.insertCell(0);
+                const computerCell = row.insertCell(1);
+                playerNameCell.textContent = data.playerScore;
+                computerCell.textContent = data.computerScore;
+            });
+        }
+        
+        async function saveGameResultsToFirestore() {
+            const gameResultsJSON = localStorage.getItem('latestGameResults');
+            if (gameResultsJSON) {
+            const gameResults = JSON.parse(gameResultsJSON);
+            try {
+                await addDoc(collection(db, "game-results"), gameResults);
+                localStorage.removeItem('latestGameResults');
+            } catch (error) {
+                console.error("Error adding document: ", error);
+            }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async (event) => {
+            await saveGameResultsToFirestore();
+            const playerName = localStorage.getItem('playerName');
+            loadResults(playerName);
+        });
+    </script>
+
+    <link rel="stylesheet" href="results.css" />
+  </head>
+  <body>
+    <div class="container">
+        <table id="resultTable"> 
+            <!-- Table Header -->
+            <thead>
+                <tr>
+                    <th colspan=2><h1>Your Past Results</h1></th>
+                </tr>
+            </thead>
+        </table> 
+    <button id="play-again-button" onclick="window.location.href='index.html';">Play Again</button>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Game</title>
+    <link rel="stylesheet" href="game.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div id="score-board">
+        <h1>The Card Game</h1>
+        <div id="player-score">Player Score: 0</div>
+        <div id="computer-score">Computer Score: 0</div>
+        <div id="draw-color"> Draw Card Color: </div>
+      </div>
+    <div class="game-board">
+      <div id="player-cards" class="hand">
+        <h2>Your Cards:</h2>
+        <!-- Player's cards will be displayed here -->
+      </div>
+
+      <div class="center-area">
+        <div id="player-played-card" class="played-card">
+          <!-- Player's played card will be displayed here -->
+        </div>
+
+        <div id="draw-card">
+          <!-- Draw card will be placed here, face-down -->
+        </div>
+
+        <div id="computer-played-card" class="played-card">
+          <!-- Computer's played card will be displayed here -->
+        </div>
+      </div>
+
+      <div id="computer-cards" class="hand">
+        <h2>Computer's Cards:</h2>
+        <!-- Computer's cards will be displayed here, face-down -->
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
