@@ -27,6 +27,7 @@ The objective of this project is to create an interactive online card game where
 -A shuffled deck is retrieved, and each player receives five cards.
 -One card is placed face-down as the "draw card."
 
+
 ### Gameplay:
 
 -Players aim to play a card closest to the value of the draw card without exceeding it.
@@ -35,10 +36,12 @@ The objective of this project is to create an interactive online card game where
 -Jokers are excluded from the deck.
 -Exact suit matches add 0 points, color matches add 2 points, and different colors add 4 points.
 
+
 ### Computer Player:
 
 -The computer player uses the color of the draw card to decide its move.
 -It cannot see the value of the draw card before it is revealed.
+
 
 ### Scoring:
 
@@ -47,6 +50,7 @@ The objective of this project is to create an interactive online card game where
 -Negative results indicate that the player played a card with a higher number value than the draw card and cannot win the round.
 -The player with the lowest closeness score wins the round.
 -Points awarded equal the sum of the number values of the played cards.
+
 
 ### Game End:
 
