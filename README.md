@@ -19,15 +19,15 @@ The objective of this project is to create an interactive online card game where
 - Game results stored in Firestore and displayed to the user
 
 
-#Game Rules
+# Game Rules
 
-##Game Start:
+## Game Start:
 
 -The user enters their name and starts a new game.
 -A shuffled deck is retrieved, and each player receives five cards.
 -One card is placed face-down as the "draw card."
 
-###Gameplay:
+### Gameplay:
 
 -Players aim to play a card closest to the value of the draw card without exceeding it.
 -Closeness is calculated by the difference in values and suit/color matching.
@@ -35,12 +35,12 @@ The objective of this project is to create an interactive online card game where
 -Jokers are excluded from the deck.
 -Exact suit matches add 0 points, color matches add 2 points, and different colors add 4 points.
 
-###Computer Player:
+### Computer Player:
 
 -The computer player uses the color of the draw card to decide its move.
 -It cannot see the value of the draw card before it is revealed.
 
-###Scoring:
+### Scoring:
 
 -First, subtract the number value of the player’s card from the draw card.
 -An exact suit match adds 0 points, a color match adds 2 points, and a different color adds 4 points.
@@ -48,7 +48,7 @@ The objective of this project is to create an interactive online card game where
 -The player with the lowest closeness score wins the round.
 -Points awarded equal the sum of the number values of the played cards.
 
-###Game End:
+### Game End:
 
 -After each round, each player is given a card from the draw pile to replace the card they just played.
 -The game ends when there are not enough cards left for a new round.
