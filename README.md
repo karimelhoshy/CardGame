@@ -54,7 +54,7 @@ The objective of this project is to create an interactive online card game where
 
 ### Game End:
 
--After each round, each player is given a card from the draw pile to replace the card they just played.
--The game ends when there are not enough cards left for a new round.
--The player with the most points is declared the winner.
--Results are saved to Firestore, tracking the scores and player names.
+- After each round, each player is given a card from the draw pile to replace the card they just played.
+- The game ends when there are not enough cards left for a new round.
+- The player with the most points is declared the winner.
+- Results are saved to Firestore, tracking the scores and player names.
